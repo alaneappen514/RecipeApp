@@ -1,0 +1,51 @@
+<%= form_with(model: recipe, local: true) do |form| %>
+  <% if recipe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+
+      <ul>
+        <% recipe.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="d-flex">
+  <div>
+  <div class="field">
+    <h6><%= form.label :title %><h6>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <h6><%= form.label :ingredients %></h6>
+    <%= form.text_area :ingredients, size: "22x10" %>
+  </div>
+  </div>
+
+  <div class="pl-5">
+  <h6 class= "text-center">Add an Image</h6>
+  <div class="border border-info">
+   <img src="https://via.placeholder.com/150" alt="recipe">
+  </div>
+  </div>
+
+  </div>
+  
+  <div class="field">
+    <h6><%= form.label :description %></h6>
+    <%= form.text_area :description, size: "40x10"  %>
+  </div>
+
+  <div class="d-flex">
+  <div class="actions mr-1">
+    <%= form.submit nil, class: 'btn btn-outline-info' %>
+  </div>
+  <div>
+  <%= link_to recipes_path do %>
+  <button class="btn btn-outline-info">Back</button>
+  <% end %>
+  </div>
+  </div>
+<% end %>

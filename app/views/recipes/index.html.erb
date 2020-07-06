@@ -1,0 +1,61 @@
+<div id="imgBanner" class="jumbotron jumbotron-fluid text-center">
+  <div class="container">
+    <h1 class="display-4 p-3 d-inline bg-dark text-white rounded-pill">Recipe Treasures</h1>
+  </div>
+</div>
+
+<div class = "container pt-2">
+<h6 id="notice"><%= notice %></h6>
+<div class="d-flex justify-content-between">
+<div class = "d-flex">
+   <h1 class = "mr-2">Recipes</h1>
+   <form class="form-inline">
+    <input class="form-control" type="search" placeholder="Search Your Recipes" aria-label="Search">
+    <button class="btn btn-outline-info my-2 my-sm-0" type="submit"><i class="fas fa-caret-right"></i></button>
+  </form>
+</div>
+<%= link_to new_recipe_path do %>
+  <button class="btn btn-outline-info"><i class="fas fa-plus fa-2x"></i></button>
+<% end %>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 mt-4">
+<% @recipes.each do |recipe| %>
+<div class="col mb-4">
+<div class="card mb-3" style="max-width: 450px;">
+  <div class="row no-gutters shadow">
+    <div class="col-md-4">
+      <img src="https://via.placeholder.com/150" class="card-img" alt="Recipes">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <div class= "overflow-auto">
+        <h6 class="card-title"><%= recipe.title %></h6>
+        </div>
+        <div class="float-right cardIcons"> 
+   
+        <%= link_to recipe do %>
+        <button class="btn btn-outline-info btn-sm "> <i class="fas fa-search "></i> </button>
+        <% end %>
+
+        <% if recipe.user == current_user %>
+        <%= link_to edit_recipe_path(recipe) do %>
+        <button class="btn btn-outline-info btn-sm "> <i class="far fa-edit "></i> </button>
+        <% end %>
+        
+        <%= link_to recipe, method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <button class="btn btn-outline-danger btn-sm"> <i class="fas fa-trash-alt"></i> </button>
+        <% end %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<% end %>
+</div>
+</div>
+
+
+
