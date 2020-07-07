@@ -11,13 +11,14 @@
     <input class="form-control mr-sm-2" type="search" placeholder="Find Recipe" aria-label="Search">
     <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
   </form>
-   <h6 class="notice text-white"><%= notice %></h6>
-   <h6 class="alert text-white"><%= alert %></h6>
-
    <% if user_signed_in? %>
 
    <%= link_to destroy_user_session_path, method: "delete" do %>
     <button class="btn btn-outline-info">Logout</button>
+   <% end %>
+
+   <%= link_to edit_user_registration_path do %>
+   <button class="btn btn-outline-info ml-2"> <i class="far fa-edit "></i> </button>
    <% end %>
 
    <% else %>

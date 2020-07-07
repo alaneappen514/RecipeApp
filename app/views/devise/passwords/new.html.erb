@@ -1,16 +1,23 @@
-<h2>Forgot your password?</h2>
+<div>
+<%= image_tag("board.jpg", :id => "bg", :alt => "bgImage") %>
+<div id= "login-content">
+
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :email %><br />
+   <h6 class = "text-white"> Enter Email</h6>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+  <div class="actions ">
+    <%= f.submit "Send me reset password instructions", :class => "btn btn-info mt-2"  %>
   </div>
 <% end %>
 
+<div class="d-flex justify-content-around mt-5">
 <%= render "devise/shared/links" %>
+</div>
+</div>
+</div>
