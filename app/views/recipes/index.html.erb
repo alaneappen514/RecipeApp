@@ -1,3 +1,8 @@
+<% flash.each do |type, msg| %>
+  <div class= "alert alert-success text-center mb-0">
+    <h6><%= msg %></h6>
+  </div>
+<% end %>
 <div id="imgBanner" class="jumbotron jumbotron-fluid text-center">
   <div class="container">
     <h1 class="display-4 p-3 d-inline bg-dark text-white rounded-pill">Recipe Treasures</h1>
@@ -5,7 +10,6 @@
 </div>
 
 <div class = "container pt-2">
-<h6 id="notice"><%= notice %></h6>
 <div class="d-flex justify-content-between">
 <div class = "d-flex">
    <h1 class = "mr-2">Recipes</h1>
