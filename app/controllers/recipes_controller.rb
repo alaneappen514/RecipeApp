@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: :index
+
   # GET /recipes
   # GET /recipes.json
   def index
@@ -15,17 +16,19 @@ class RecipesController < ApplicationController
   # GET /recipes/new
   def new
     @recipe = current_user.recipes.build
+    authorize @recipe
   end
 
   # GET /recipes/1/edit
   def edit
+    authorize @recipe
   end
 
   # POST /recipes
   # POST /recipes.json
   def create
     @recipe = current_user.recipes.build(recipe_params)
-
+    authorize @recipe
     respond_to do |format|
       if @recipe.save
         format.html { redirect_to @recipe, notice: 'Recipe Created.' }
@@ -40,9 +43,10 @@ class RecipesController < ApplicationController
   # PATCH/PUT /recipes/1
   # PATCH/PUT /recipes/1.json
   def update
+    authorize @recipe
     respond_to do |format|
       if @recipe.update(recipe_params)
-        format.html { redirect_to @recipe, notice: 'Recipe Updated.' }
+        format.html { redirect_to @recipe, notice: 'Recipe Updated' }
         format.json { render :show, status: :ok, location: @recipe }
       else
         format.html { render :edit }
@@ -54,6 +58,7 @@ class RecipesController < ApplicationController
   # DELETE /recipes/1
   # DELETE /recipes/1.json
   def destroy
+    authorize @recipe
     @recipe.destroy
     respond_to do |format|
       format.html { redirect_to recipes_url, notice: 'Recipe Deleted.' }
