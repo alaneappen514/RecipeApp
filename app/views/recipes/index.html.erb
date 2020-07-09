@@ -1,8 +1,13 @@
-<% flash.each do |type, msg| %>
-  <div class= "alert alert-success text-center mb-0">
-    <h6><%= msg %></h6>
-  </div>
+<% if notice.present? %>
+<div class= "alert alert-success text-center mb-0">
+    <h6><%= notice %></h6>
+</div>
+<% elsif danger.present? %>
+<div class= "alert alert-danger text-center mb-0">
+    <h6><%= danger %></h6>
+</div>
 <% end %>
+
 <div id="imgBanner" class="jumbotron jumbotron-fluid text-center">
   <div class="container">
     <h1 class="display-4 p-3 d-inline bg-dark text-white rounded-pill">Recipe Treasures</h1>
@@ -42,15 +47,18 @@
         <button class="btn btn-outline-info btn-sm "> <i class="fas fa-search "></i> </button>
         <% end %>
 
-        <% if recipe.user == current_user %>
+        <% if policy(recipe).edit? %>
         <%= link_to edit_recipe_path(recipe) do %>
         <button class="btn btn-outline-info btn-sm "> <i class="far fa-edit "></i> </button>
         <% end %>
+        <% end %>
         
+        <% if policy(recipe).destroy? %>
         <%= link_to recipe, method: :delete, data: { confirm: 'Are you sure?' } do %>
         <button class="btn btn-outline-danger btn-sm"> <i class="fas fa-trash-alt"></i> </button>
         <% end %>
         <% end %>
+     
         </div>
       </div>
     </div>

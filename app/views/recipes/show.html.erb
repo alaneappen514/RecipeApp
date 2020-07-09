@@ -1,8 +1,8 @@
 <div class="container p-5">
-<% flash.each do |type, msg| %>
-  <div class= "alert alert-success text-center">
-    <h6><%= msg %></h6>
-  </div>
+<% if notice.present? %>
+<div class= "alert alert-success text-center mb-0">
+    <h6><%= notice %></h6>
+</div>
 <% end %>
 <div class = "d-flex">
 <div class="mr-5">
@@ -23,8 +23,8 @@
       <div class="d-flex justify-content-between p-2">
        <button class="btn btn-danger "><i class="far fa-thumbs-up"></i></button>
 
-       <% if @recipe.user == current_user %>
-       <%= link_to edit_recipe_path(@recipe) do %>
+       <% if policy(@recipe).edit? %>
+       <%= link_to edit_recipe_path(@recipe)  do %>
        <button class="btn btn-outline-info "> <i class="far fa-edit "></i> </button>
        <% end %>
        <% end %>

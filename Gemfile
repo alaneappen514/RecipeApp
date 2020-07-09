@@ -15,6 +15,8 @@ gem 'bootstrap', '~> 4.5.0'
 gem 'font-awesome-sass', '~> 5.13.0'
 #Devise Gem
 gem 'devise', '~> 4.7', '>= 4.7.2'
+#Pundit Gem
+gem 'pundit'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
