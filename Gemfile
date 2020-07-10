@@ -17,6 +17,8 @@ gem 'font-awesome-sass', '~> 5.13.0'
 gem 'devise', '~> 4.7', '>= 4.7.2'
 #Pundit Gem
 gem 'pundit'
+#Model Serializer
+gem 'fast_jsonapi'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker

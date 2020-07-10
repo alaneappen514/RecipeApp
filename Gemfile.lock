@@ -89,6 +89,8 @@ GEM
       warden (~> 1.2.3)
     erubi (1.9.0)
     execjs (2.7.0)
+    fast_jsonapi (1.5)
+      activesupport (>= 4.2)
     ffi (1.13.1)
     font-awesome-sass (5.13.0)
       sassc (>= 1.11)
@@ -228,6 +230,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   devise (~> 4.7, >= 4.7.2)
+  fast_jsonapi
   font-awesome-sass (~> 5.13.0)
   jbuilder (~> 2.7)
   listen (~> 3.2)
