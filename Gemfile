@@ -9,8 +9,6 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
-#Boostrap
-gem 'bootstrap', '~> 4.5.0'
 #Fontawesome
 gem 'font-awesome-sass', '~> 5.13.0'
 #Devise Gem
