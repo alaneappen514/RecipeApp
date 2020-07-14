@@ -13,14 +13,20 @@
   </form>
    <% if user_signed_in? %>
 
-   <%= link_to destroy_user_session_path, method: "delete" do %>
-    <button class="btn btn-outline-info">Logout</button>
-   <% end %>
 
-   <%= link_to edit_user_registration_path do %>
-   <button class="btn btn-outline-info ml-2"> <i class="far fa-edit "></i> </button>
+   <div class="dropdown">
+  <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  Account
+  </button>
+  <div class="dropdown-menu btn btn-outline-info" aria-labelledby="dropdownMenuButton">
+  <%= link_to destroy_user_session_path, :class => "dropdown-item  text-decoration-none", method: "delete" do %>
+    Logout
    <% end %>
-
+   <%= link_to edit_user_registration_path, :class => "dropdown-item  text-decoration-none" do %>
+    Edit Account
+    <% end %>
+  </div>
+  </div>
    <% else %>
 
     <%= link_to new_user_session_path do %>
