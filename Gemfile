@@ -51,6 +51,13 @@ group :development do
 end
 
 group :test do
+  gem 'byebug'
+  gem 'database_cleaner'
+  gem 'factory_bot_rails'
+  # generate dummy data
+  gem 'faker'
+  #Rspec testing framewor
+  gem 'rspec-rails', '~> 4.0.0.beta2'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
