@@ -10,6 +10,7 @@ FactoryBot.define do
     email {"someone@gmail.com"}
     password {"password12"}
 end
+
 end
 
 
