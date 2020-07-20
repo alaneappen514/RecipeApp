@@ -23,7 +23,6 @@ RSpec.describe "Recipes", type: :request do
   end
  end
 
-
   describe "POST #create" do
   it "should post a sandwhich recipe" do
     post('/api/v1/recipes/', params: {title:"Chicken Soup", ingredients:"chicken, chicken broth", description:"boil water and chicken broth", user_id: recipes.user.id})

@@ -10,7 +10,8 @@ class Api::V1::RecipesController < ApplicationController
     end
 
     def create
-        @recipe = Recipe.create!(params.permit(:title, :ingredients, :description, :user_id))
+        byebug
+        @recipe = Recipe.create!(params.permit(:title, :ingredients, :description, :user_id ))
         render json: RecipeSerializer.new(@recipe).serializable_hash
     rescue => e
         render json: { error: e.message }, status: 422
@@ -18,7 +19,7 @@ class Api::V1::RecipesController < ApplicationController
 
     def update
      
-       @recipe = Recipe.update(params.permit(:title, :ingredients, :description,  :user_id))
+       @recipe = Recipe.update(params.permit(:title, :ingredients, :description,  :user_id ))
        render json: RecipeSerializer.new(@recipe).serializable_hash
     end
 end
