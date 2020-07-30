@@ -5,13 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :recipes
-
   #join table
   has_many :recipe_users
 
-  has_many :recipe_collabs, through: :recipe_users, source: :recipe
+  has_many :saved_recipes, through: :recipe_users
   
-
   def username
      return self.email.split('@')[0].capitalize
   end
