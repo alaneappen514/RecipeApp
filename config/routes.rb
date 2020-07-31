@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'recipe_users/update'
   devise_for :users
   resources :recipes
   root 'recipes#index'

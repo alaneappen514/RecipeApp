@@ -9,4 +9,10 @@ class ApplicationController < ActionController::Base
     flash[:danger] = "You are not authorized to perform this action"
     redirect_to(request.referrer || root_path)
   end
+
+  def favorite_text
+   return @favorite_exists ? "fas fa-bookmark fa-2x" : "far fa-bookmark fa-2x"
+  end
+ 
+  helper_method :favorite_text
 end
