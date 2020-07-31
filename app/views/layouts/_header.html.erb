@@ -12,10 +12,9 @@
     <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
   </form>
    <% if user_signed_in? %>
-
-
+  
    <div class="dropdown">
-  <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <button class="btn btn-outline-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   Account
   </button>
   <div class="dropdown-menu btn btn-outline-info" aria-labelledby="dropdownMenuButton">
@@ -25,6 +24,9 @@
    <%= link_to edit_user_registration_path, :class => "dropdown-item  text-decoration-none" do %>
     Edit Account
     <% end %>
+    <a class="dropdown-item  text-decoration-none text-dark" data-toggle="modal" data-target="#exampleModalScrollable">
+    Favorite
+    </a>
   </div>
   </div>
    <% else %>

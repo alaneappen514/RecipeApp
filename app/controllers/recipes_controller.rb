@@ -11,6 +11,7 @@ class RecipesController < ApplicationController
   # GET /recipes/1
   # GET /recipes/1.json
   def show
+    @favorite_exists = RecipeUser.where(recipe: @recipe, user: current_user) == [] ? false : true
   end
 
   # GET /recipes/new

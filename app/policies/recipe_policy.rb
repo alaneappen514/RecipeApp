@@ -4,7 +4,6 @@ class RecipePolicy < ApplicationPolicy
   end
 
   def new?
-    byebug
     owned?
   end
 
