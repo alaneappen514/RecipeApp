@@ -8,7 +8,7 @@ class User < ApplicationRecord
   #join table
   has_many :recipe_users
 
-  has_many :saved_recipes, through: :recipe_users
+  has_many :shared_recipes, through: :recipe_users
   
   def username
      return self.email.split('@')[0].capitalize

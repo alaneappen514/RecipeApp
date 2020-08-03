@@ -28,13 +28,17 @@
 <% end %>
 </div>
 
-<div class="row row-cols-1 row-cols-md-3 mt-4">
+<div class="row row-cols-1 row-cols-md-2 mt-4">
 <% @recipes.each do |recipe| %>
 <div class="col mb-4">
 <div class="card mb-3" style="max-width: 450px;">
   <div class="row no-gutters shadow">
     <div class="col-md-4">
-      <img src="https://via.placeholder.com/150" class="card-img" alt="Recipes">
+    <% if recipe.image.attached? %>
+    <%= image_tag recipe.image, class: "card-img", alt: "Recipes" %>
+    <% else %>
+    <img src="https://via.placeholder.com/150" class="card-img" alt="Recipes">
+    <% end %>
     </div>
     <div class="col-md-8">
       <div class="card-body">
@@ -58,7 +62,6 @@
         <button class="btn btn-outline-danger btn-sm"> <i class="fas fa-trash-alt"></i> </button>
         <% end %>
         <% end %>
-     
         </div>
       </div>
     </div>

@@ -26,6 +26,6 @@ class RecipePolicy < ApplicationPolicy
   private
 
   def owned?
-    user == @record.user
+    record.user == user
   end
 end
