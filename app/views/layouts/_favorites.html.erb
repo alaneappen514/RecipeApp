@@ -15,10 +15,14 @@
         <div id= "favRecipe" class="border mb-4">
         <div class="row">
         <div class="col-4">
-        <img src="https://via.placeholder.com/150" style="width:10em; height:10em" alt="Recipes">
+        <% if favorite.recipe.image.attached? %>
+        <%= image_tag favorite.recipe.image, style: "width:10em; height:10em", alt: "Recipes" %>
+        <% else %>
+        <img src="https://via.placeholder.com/150" style: "width:10em; height:10em", alt="Recipes">
+        <% end %>
         </div>
         <div class="col-8 d-flex justify-content-center align-items-center">
-        <h6 class="d-inline"> <%= favorite.recipe.title %></h6>
+        <h6 class="d-inline "> <%= favorite.recipe.title %></h6>
         </div>
         </div>
         </div>
