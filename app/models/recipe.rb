@@ -4,10 +4,12 @@ validates :ingredients, presence: true, length: { in: 5..500 }
 validates :description, presence: true, length: { in: 5..500 }
 #the owner
 belongs_to :user
-#the join table
-has_many :recipe_users
 
+has_many :recipe_users
 has_many :users, through: :recipe_users
+
+has_many :collaborations
+has_many :users, through: :collaborations
 
 has_one_attached :image
 end

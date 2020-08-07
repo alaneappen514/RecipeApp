@@ -35,6 +35,19 @@ describe RecipePolicy do
           expect(subject).to permit(user, Recipe.create!(title:"Chicken Soup", ingredients:"chicken, chicken broth", description:"boil water and chicken broth", user_id: user.id))
         end
     end
+ end
+
+ context "for a collaborator to edit recipes" do
+  let(:user2) {FactoryBot.create(:user2)}
+  let(:recipe) {FactoryBot.create(:random_recipe)}
+
+  permissions :edit?, :update? do
+      it "grants access if the user is a collaborator" do
+        expect(subject).to permit(user2, recipe)
+      end
+  end
 end
 
 end
+
+

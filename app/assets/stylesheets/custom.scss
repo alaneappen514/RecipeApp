@@ -66,3 +66,18 @@
   height: 22vh;
   object-fit: cover;
 }
+
+.collaborators {
+  transition: all 0.5s;
+  pointer-events: none;
+}
+
+.collabRemove {
+  pointer-events: auto;
+}
+.collaborators:hover {
+  background-color: #17a2b8;
+  & h6 {
+    color: white;
+  }
+}

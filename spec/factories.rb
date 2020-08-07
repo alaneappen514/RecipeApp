@@ -16,6 +16,10 @@ factory :user2, class: User do
    password {"!password!"}
 end
 
+factory :recipe_collab1, class: Collaboration do
+   association :user2, :random_recipe
+end
+
 end
 
 
