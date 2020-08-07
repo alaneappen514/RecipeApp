@@ -47,18 +47,18 @@
         </div>
         <div class="float-right cardIcons"> 
    
-        <%= link_to recipe do %>
-        <button class="btn btn-outline-info btn-sm "> <i class="fas fa-search "></i> </button>
+        <%= link_to recipe, class: " text-decoration-none" do %>
+        <button class="btn btn-outline-info btn-sm text-decoration-none"> <i class="fas fa-search "></i> </button>
         <% end %>
 
         <% if policy(recipe).edit? %>
-        <%= link_to edit_recipe_path(recipe) do %>
+        <%= link_to edit_recipe_path(recipe), class: "text-decoration-none" do %>
         <button class="btn btn-outline-info btn-sm "> <i class="far fa-edit "></i> </button>
         <% end %>
         <% end %>
         
         <% if policy(recipe).destroy? %>
-        <%= link_to recipe, method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <%= link_to recipe, class: "text-decoration-none", method: :delete, data: { confirm: 'Are you sure?' } do %>
         <button class="btn btn-outline-danger btn-sm"> <i class="fas fa-trash-alt"></i> </button>
         <% end %>
         <% end %>

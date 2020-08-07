@@ -1,31 +1,38 @@
 class RecipePolicy < ApplicationPolicy
  def show?
-    owned?
-  end
+    user_owner_of_record?
+ end
 
   def new?
-    owned?
+    create?
   end
 
   def create?
-    owned?
+    user_owner_of_record?
   end
 
   def update?
-   owned?
+   user_is_collaborator? || user_owner_of_record?
   end
 
   def edit?
-    owned?
+    update?
   end
 
   def destroy?
-    owned?
+    user_owner_of_record?
   end
 
   private
 
-  def owned?
+  def user_owner_of_record?
     record.user == user
+  end
+
+  def user_is_collaborator?
+  if user.present?
+  record_user_ids= record.collaborations.pluck(:user_id)
+  record_user_ids.include?(user.id)
+  end
   end
 end

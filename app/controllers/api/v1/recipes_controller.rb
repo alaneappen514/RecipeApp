@@ -10,7 +10,6 @@ class Api::V1::RecipesController < ApplicationController
     end
 
     def create
-        byebug
         @recipe = Recipe.create!(params.permit(:title, :ingredients, :description, :user_id ))
         render json: RecipeSerializer.new(@recipe).serializable_hash
     rescue => e
