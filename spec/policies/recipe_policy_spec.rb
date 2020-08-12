@@ -37,7 +37,7 @@ describe RecipePolicy do
     end
  end
 
- context "for a collaborator to edit recipes" do
+ context "for a collaborator to edit and update recipes" do
   let(:user2) {FactoryBot.create(:user2)}
   let(:recipe) {FactoryBot.create(:random_recipe)}
 

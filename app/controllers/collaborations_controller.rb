@@ -10,10 +10,10 @@ class CollaborationsController < ApplicationController
       if @collaboration.save
         flash[:notice] = "User successfully added to Recipe"
     else 
-        flash[:notice] = "There was a problem adding user"
+        flash[:danger] = "There was a problem adding user"
       end
     else
-      flash[:notice] = "Invalid email. Please try again."
+      flash[:danger] = "Invalid email. Please try again."
     end
     redirect_to @recipe
   end
@@ -23,14 +23,11 @@ class CollaborationsController < ApplicationController
     @collaboration = Collaboration.find(params[:id])
      respond_to do |format|
       if @collaboration.destroy
-        format.html 
         format.js { flash[:notice] = "Member removed from Recipe"} 
        else
-        format.html 
-        format.js { flash[:notice] = "There was an error removing user"}
+        format.js { flash[:danger] = "There was an error removing user"}
        end
        
     end
-    
   end
 end
