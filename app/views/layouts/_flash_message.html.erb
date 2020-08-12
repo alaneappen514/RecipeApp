@@ -1,0 +1,27 @@
+<% if notice.present? %>
+<div class="toast bg-info mr-5" data-delay="3000" style="position: absolute; top: 1; right: 0; ">
+    <div class="text-center">
+    <div>
+    <i class="fas fa-utensils text-white"></i>
+      <div class="navbar-brand text-white">RT</div>
+    </div>
+    </div>
+    <div class="pr-2 pl-2 mt-3">
+    <p class="text-white"><%= notice %></p>
+    </div>
+  </div>
+  <% elsif danger.present? %>
+  <div class="toast bg-danger mr-5" data-delay="4000" style="position: absolute; top: 1; right: 0;">
+  <div class="text-center">
+  <div>
+  <i class="fas fa-utensils text-white"></i>
+  <div class="navbar-brand text-white">RT</div>
+  </div>
+  </div>
+  <div class="pr-2 pl-2 mt-3">
+  <p class="text-white"><%= danger %></p>
+  </div>
+  </div>
+  <%end%>
+  
+

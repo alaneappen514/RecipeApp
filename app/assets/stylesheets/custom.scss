@@ -10,11 +10,10 @@
   background-size: cover;
 }
 #titleRecipe {
-  width: 540px;
-  margin-right: 100px;
+  width: 550px;
 }
 #decriptionRecipe {
-  margin-right: 100px;
+  margin-right: 125px;
 }
 .cardIcons {
   margin-top: 80px;
@@ -77,7 +76,4 @@
 }
 .collaborators:hover {
   background-color: #17a2b8;
-  & h6 {
-    color: white;
-  }
 }

@@ -12,6 +12,7 @@
   <% unless action_name == "new" || action_name == "edit" %>
   <%= render 'layouts/header' %>
   <% end %>
+  <%= render "layouts/flash_message" %>
   <%= yield %>
   </body>
 </html>
